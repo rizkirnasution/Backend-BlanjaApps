@@ -13,7 +13,9 @@ const DB_HOST = process.env.DB_HOST
 
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(cors())
+app.use(cors({
+  origin: "*"
+}));
 // app.use(helmet());
 app.use(xss());
 app.use(express.raw())
